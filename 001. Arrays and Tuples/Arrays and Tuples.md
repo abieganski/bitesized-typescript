@@ -30,7 +30,7 @@ let tupWrong2: [string, number] = [ 'adam' ];
 
 ```
 
-You could emulate a [string, number] tuple with an array, but it wouldn't be fully equivalent:
+You could emulate a `[string, number]` tuple with an array, but it wouldn't be fully equivalent:
 
 ```typescript
 

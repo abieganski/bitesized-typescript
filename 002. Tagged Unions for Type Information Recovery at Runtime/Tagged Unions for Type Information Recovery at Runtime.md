@@ -80,4 +80,4 @@ function calculateArea(shape: Shape) {
 ```
 
 # Image
-![Tagged Unions for Type Information Recovery at Runtime](<Tagged Unions for Type Information Recovery at Runtime.png>)
+![Tagged Unions for Type Information Recovery at Runtime](tagged-unions-for-type-information-recovery-at-runtime.png)

@@ -1,83 +1,57 @@
-# Tagged Unions for Type Information Recovery at Runtime
+# Arrays and Tuples
 
-## Problem
+## Question
 
-TypeScript type information (e.g. interfaces) does not exist at runtime.
-You need a way of recovering that information at runtime.
+What is the difference between an array and a tuple
 
-## Solution
+## Answer
 
-Tagged union
-
-```typescript
-interface Square {
-    kind: 'square';
-    width: number;
-}
-
-interface Rectangle {
-    kind: 'rectangle';
-    height: number;
-    width: number;
-}
-
-type Shape = Square | Rectangle;
-
-function calculateArea(shape: Shape) {
-    if (shape.kind === 'rectangle') {
-        shape; // Type is Rectangle
-        return shape.width * shape.height;
-    } else {
-        shape; // Type is Square
-        return shape.width * shape.width;
-    }
-}
-```
-
-## How It Works
-
-The `kind` field represents the type in a way that won't be erased at runtime.
-
-The `Shape` type is defined as a union (`|`) of the Square and Rectangle types. Effectively its `kind` field will be of type:
-```typescript
-kind: 'square' | 'rectangle'
-```
-i.e. it will allow either of those strings.
-
-
-So now you can create an instance of a Rectangle like this:
+Array items must be of the same type, e.g.
 
 ```typescript
-const rect : Rectangle = {
-    kind: 'rectangle',
-    width: 100,
-    height: 200
-};
-```
-or like this:
-```typescript
-const rect : Shape = {
-    kind: 'rectangle',
-    width: 100,
-    height: 200
-};
+let arr: string[] = [ 'adam', 'amy' ];
+
+let arrWrong: string[] = [ 'adam', 11 ];  
+                // error TS2322: Type 'number' is not assignable to type 'string'.
 ```
 
-Either way, when you call the `calculateArea` function:
-```typescript
-calculateArea(rect)
-```
-it will not only be able to recognize that `rect` is of type `Rectangle`, but also the TypeScript parser will treat it as of that type when accessing its fields:
+A tuple has a set number of items and each item is of a specified type:
 
 ```typescript
-function calculateArea(shape: Shape) {
-    if (shape.kind === 'rectangle') {
-        return shape.width * shape.height;  // <-- TypeScript knows shape is of type Rectangle
-    } else {
-        return shape.width * shape.width;
-    }
-}
+let tup: [string, number] = [ 'adam', 11 ];
+
+let tupWrong: [string, number] = [ 11, 'adam' ];
+                    // error TS2322: Type 'number' is not assignable to type 'string'.
+                    // error TS2322: Type 'string' is not assignable to type 'number'.
+
+let tupWrong2: [string, number] = [ 'adam' ];
+                    // error TS2322: Type '[string]' is not assignable to type '[string, number]'.
+                    // Source has 1 element(s) but target requires 2.   
+
 ```
+
+You could emulate a [string, number] tuple with an array, but it wouldn't be fully equivalent:
+
+```typescript
+
+let arrLikeTup: (string | number)[]  = [ 'adam', 11 ];
+
+// not really what we're after:
+arrLikeTup = [ 11, 'adam' ]
+```
+
+
+You can use `push` and `pop` on a tuple, underlyingly it's a flat array
+```typescript
+tup.push('amy', 5);
+console.log(tup);
+    // (4) ['adam', 11, 'amy', 5]
+
+let popped = tup.pop();
+console.log(popped);
+    // 5
+```
+
 
 # Image
-![Tagged Unions for Type Information Recovery at Runtime](<Tagged Unions for Type Information Recovery at Runtime.png>)
+![alt text](arrays-and-tuples.png)

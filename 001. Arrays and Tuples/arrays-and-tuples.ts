@@ -1,41 +1,41 @@
-interface Square {
-    kind: 'square';
-    width: number;
-}
+// Arrays and Tuples
 
-interface Rectangle {
-    kind: 'rectangle';
-    height: number;
-    width: number;
-}
+// array
+let arr: string[] = [ "adam", "amy" ]
 
-type Shape = Square | Rectangle;
-
-function calculateArea(shape: Shape) {
-    if (shape.kind === 'rectangle') {
-        //shape; // Type is Rectangle
-        return shape.width * shape.height;
-    } else {
-        //shape; // Type is Square
-        return shape.width * shape.width;
-    }
-}
+//let arrWrong: string[] = [ "adam", 11 ]
+                    // error TS2322: Type 'number' is not assignable to type 'string'.
 
 
 
-const rect : Shape = {
-    kind: 'rectangle',
-    width: 100,
-    height: 200
-};
+// tuple
+let tup: [string, number] = [ 'adam', 11 ];
 
-console.log(calculateArea(rect))
-
-const square : Shape = {
-    kind: 'square',
-    width: 100
-};
-
-console.log(calculateArea(square))
+//let tupWrong: [string, number] = [ 11, 'adam' ];
+                    // error TS2322: Type 'number' is not assignable to type 'string'.
+                    // error TS2322: Type 'string' is not assignable to type 'number'.
 
 
+//let tupWrong2: [string, number] = [ 'adam' ];
+                    // error TS2322: Type '[string]' is not assignable to type '[string, number]'.
+                    // Source has 1 element(s) but target requires 2.         
+
+
+
+// array like tuple
+let arrLikeTup: (string | number)[]  = [ 'adam', 11 ];
+
+// not really what we're after:
+arrLikeTup = [ 11, 'adam' ]                    
+
+
+
+
+// you can use push and pop on a tuple, underlyingly it's a flat array
+tup.push('amy', 5);
+console.log(tup);
+    // (4) ['adam', 11, 'amy', 5]
+
+let popped = tup.pop();
+console.log(popped);
+    // 5

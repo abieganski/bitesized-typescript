@@ -67,12 +67,12 @@ Either way, when you call the `calculateArea` function:
 ```typescript
 calculateArea(rect)
 ```
-it will not only be able to recognize that `rect` is of type `Rectangle`, but also the TypeScript parser will treat it as of that type when accessing its fields:
+it will not only be able to recognize that `rect` is of type `Rectangle`, but also the TypeScript parser will treat it as of that type (this is called "narrowing") when accessing its fields:
 
 ```typescript
 function calculateArea(shape: Shape) {
     if (shape.kind === 'rectangle') {
-        return shape.width * shape.height;  // <-- TypeScript knows shape is of type Rectangle
+        return shape.width * shape.height;  // <-- TypeScript knows shape is of type Rectangle (narrowing)
     } else {
         return shape.width * shape.width;
     }

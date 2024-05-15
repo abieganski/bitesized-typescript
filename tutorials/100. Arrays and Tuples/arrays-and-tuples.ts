@@ -3,7 +3,7 @@
 // array
 let arr: string[] = [ "adam", "amy" ]
 
-//let arrWrong: string[] = [ "adam", 11 ]
+let arrWrong: string[] = [ "adam", 11 ]
                     // error TS2322: Type 'number' is not assignable to type 'string'.
 
 
@@ -11,12 +11,12 @@ let arr: string[] = [ "adam", "amy" ]
 // tuple
 let tup: [string, number] = [ 'adam', 11 ];
 
-//let tupWrong: [string, number] = [ 11, 'adam' ];
+let tupWrong: [string, number] = [ 11, 'adam' ];
                     // error TS2322: Type 'number' is not assignable to type 'string'.
                     // error TS2322: Type 'string' is not assignable to type 'number'.
 
 
-//let tupWrong2: [string, number] = [ 'adam' ];
+let tupWrong2: [string, number] = [ 'adam' ];
                     // error TS2322: Type '[string]' is not assignable to type '[string, number]'.
                     // Source has 1 element(s) but target requires 2.         
 

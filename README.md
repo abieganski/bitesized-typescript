@@ -13,6 +13,8 @@ How to learn TypeScript when you have the attention span of a goldfish?
 
 Use bitesized tutorials.
 
+![Apple](apple.png)
+
 # How It Works
 
 1. Clone the repo
@@ -27,3 +29,5 @@ Use bitesized tutorials.
 1. [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/)
 2. [Effective TypeScript](https://effectivetypescript.com/)
 
+
+Code images generated using https://codeimage.dev/

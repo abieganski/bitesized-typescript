@@ -21,6 +21,10 @@ Use bitesized tutorials.
 2. Open in Visual Studio Code
 3. View the bitesized tutorials
 
+# Disclaimer
+
+This is a work in progress, I update this repo as I learn. There are going to be (drastic) changes sometimes.
+
 
 # Image
 ![Readme](readme.png)

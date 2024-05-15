@@ -30,10 +30,11 @@ namespace TemplateLiteralTypes {
     }
 
 
-    const endpoint: GetUsersEndpoint = 'GET /api/users'
-    const badEndpoint: GetUsersEndpoint = 'GET /api/user'
+    const endpoint: GetUsersEndpoint = 'GET /api/users';
+
+    const badEndpoint: GetUsersEndpoint = 'GET /api/user';
             // error TS2322: Type '"GET /api/user"' is not assignable to type '"GET /api/users"'.
-    const badEndpoint2: GetUsersEndpoint = 'get /api/users'
+    const badEndpoint2: GetUsersEndpoint = 'get /api/users';
             // error TS2322: Type '"get /api/users"' is not assignable to type '"GET /api/users"'.
     
     fetch(endpoint);

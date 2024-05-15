@@ -25,6 +25,10 @@ Use bitesized tutorials.
 
 This is a work in progress, I update this repo as I learn. There are going to be (drastic) changes sometimes.
 
+# Who am I
+* https://adm.ski/ - home page
+* https://www.linkedin.com/in/abieganski/ - linkedin profile
+
 
 # Image
 ![Readme](readme.png)
@@ -35,3 +39,4 @@ This is a work in progress, I update this repo as I learn. There are going to be
 2. [Flo Woelki](https://www.youtube.com/@FloWoelki)
 
 Code images generated using https://codeimage.dev/
+

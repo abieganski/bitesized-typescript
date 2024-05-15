@@ -28,6 +28,6 @@ Use bitesized tutorials.
 # Sources
 1. [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/)
 2. [Effective TypeScript](https://effectivetypescript.com/)
-
+2. [Flo Woelki](https://www.youtube.com/@FloWoelki)
 
 Code images generated using https://codeimage.dev/
